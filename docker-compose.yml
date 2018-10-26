@@ -1,0 +1,14 @@
+version: "3.6"
+
+services:
+  jlinkster-vault:
+    image: vault
+    container_name: jlinkster-vault
+    ports:
+      - "8200:8200"
+    cap_add:
+      - IPC_LOCK
+    volumes:
+      - "./logs:/vault/logs"
+      - "./file:/vault/file"
+      - "./config:/vault/config"
